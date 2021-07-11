@@ -1,4 +1,5 @@
 from player import Player
+import time
 from tkinter import *
 
 
@@ -79,10 +80,20 @@ class PopIt:
         while True:
             if self.game_over:
                 print("Game Over")
+                label = Label(root, text="Game Over", font=30, height=5, width=15)
+                label_win = Label(root, font=15, height=5,width=15)
+                label_win.place(x=700,y=400)
+                label.place(x=700, y=250)
+                if self.loser == 1:
+                    label_win["text"] = "Player 2 Wins!"
+                else:
+                    label_win["text"] = "Player 1 Wins!"
+                root.update()
+                time.sleep(5)
                 return
+
             else:
                 root.update()
-        #root.mainloop()
 
 
 pop = PopIt()
