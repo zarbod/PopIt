@@ -65,6 +65,9 @@ class PopIt:
 
         root = Tk()
 
+        player1 = Player()
+        player2 = Player()
+
         confirm_button = Button(root, text="Confirm Move", height=4, width=10, command=lambda: self.if_clicked_confirm())
         confirm_button.place(x=100, y = 700)
 
@@ -84,10 +87,18 @@ class PopIt:
                 label_win = Label(root, font=15, height=5,width=15)
                 label_win.place(x=700,y=400)
                 label.place(x=700, y=250)
+                win_text = ""
                 if self.loser == 1:
-                    label_win["text"] = "Player 2 Wins!"
+                    win_text = "Player 2 Wins!"
+                    player2.set_score(player2.get_score() + 1)
                 else:
-                    label_win["text"] = "Player 1 Wins!"
+                    win_text = "Player 1 Wins!"
+                    player1.set_score(player1.get_score() + 1)
+
+                win_text += "\n Player 1 score: " + str(player1.get_score()) + "\n Player 2 score: " + str(player2.get_score())
+
+                label["text"] = win_text
+
                 root.update()
                 time.sleep(5)
                 return
