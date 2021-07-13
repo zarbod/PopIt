@@ -70,13 +70,13 @@ class PopIt:
         player1 = Player()
         player2 = Player()
 
-        confirm_button = Button(root, text="Confirm Move", height=4, width=10, command=lambda: self.if_clicked_confirm())
+        confirm_button = Button(root, text="Confirm Move", command=lambda: self.if_clicked_confirm())
         confirm_button.place(x=100, y = 700)
 
         for i in range(0, 6):
             for j in range(0, len(self.board[i])):
 
-                button = Button(root, text="0", height=2, width=10, style='W.TButton', command=lambda i1 = i, j1 = j: self.if_clicked_square(i1,j1))
+                button = Button(root, text="0", style='W.TButton', command=lambda i1 = i, j1 = j: self.if_clicked_square(i1,j1))
                 button.place(x=25 + (100 * j), y=100 + (100 * i))
                 # button.pack()
                 self.buttonsList[i].append(button)
@@ -87,7 +87,7 @@ class PopIt:
             if self.game_over:
                 print("Game Over")
                 label = Label(root, text="Game Over", font=30, height=5, width=15)
-                label_win = Label(root, font=15, height=5,width=15)
+                label_win = Label(root)
                 label_win.place(x=700,y=400)
                 label.place(x=700, y=250)
                 win_text = ""
