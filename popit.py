@@ -2,7 +2,7 @@ from player import Player
 import time
 from tkinter import *
 from tkinter.ttk import *
-
+from ttkthemes import themed_tk as tk
 
 class PopIt:
 
@@ -64,7 +64,9 @@ class PopIt:
 
     def run_game(self):
 
-        root = Tk()
+        root = tk.ThemedTk()
+        root.get_themes()
+        root.set_theme('adapta')
         style = Style()
         style.configure('W.TButton', font=('calibri', 10, 'bold', 'underline'),foreground='red')
         player1 = Player()
