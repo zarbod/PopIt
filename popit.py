@@ -1,6 +1,7 @@
 from player import Player
 import time
 from tkinter import *
+from tkinter.ttk import *
 
 
 class PopIt:
@@ -64,7 +65,8 @@ class PopIt:
     def run_game(self):
 
         root = Tk()
-
+        style = Style()
+        style.configure('W.TButton', font=('calibri', 10, 'bold', 'underline'),foreground='red')
         player1 = Player()
         player2 = Player()
 
@@ -74,11 +76,12 @@ class PopIt:
         for i in range(0, 6):
             for j in range(0, len(self.board[i])):
 
-                button = Button(root, text="0", height=2, width=10, command=lambda i1 = i, j1 = j: self.if_clicked_square(i1,j1))
+                button = Button(root, text="0", height=2, width=10, style='W.TButton', command=lambda i1 = i, j1 = j: self.if_clicked_square(i1,j1))
                 button.place(x=25 + (100 * j), y=100 + (100 * i))
-
                 # button.pack()
                 self.buttonsList[i].append(button)
+
+
 
         while True:
             if self.game_over:
