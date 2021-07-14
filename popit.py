@@ -88,7 +88,7 @@ class PopIt:
         while True:
             if self.game_over:
                 print("Game Over")
-                label = Label(root, text="Game Over", font=30, height=5, width=15)
+                label = Label(root, text="Game Over", style='W.TButton')
                 label_win = Label(root)
                 label_win.place(x=700,y=400)
                 label.place(x=700, y=250)
@@ -103,6 +103,12 @@ class PopIt:
                 win_text += "\n Player 1 score: " + str(player1.get_score()) + "\n Player 2 score: " + str(player2.get_score())
 
                 label["text"] = win_text
+
+                play_again = Label(root, text="Play Again?", style='W.TButton')
+
+                play_again.place(x=700, y=600)
+
+
 
                 root.update()
                 time.sleep(5)
