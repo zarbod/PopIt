@@ -13,6 +13,7 @@ class PopIt:
         self.game_over = False
         self.loser = None
         self.buttonsList = [[],[],[],[],[],[]]
+        self.again = True
 
     def if_clicked_square(self, i, j):
         qb = self.buttonsList[i][j]
@@ -62,6 +63,9 @@ class PopIt:
         else:
             self.whose_turn = 1
 
+    def reset_board(self):
+        return
+
     def run_game(self):
 
         root = tk.ThemedTk()
@@ -82,8 +86,6 @@ class PopIt:
                 button.place(x=25 + (100 * j), y=100 + (100 * i))
                 # button.pack()
                 self.buttonsList[i].append(button)
-
-
 
         while True:
             if self.game_over:
@@ -106,8 +108,12 @@ class PopIt:
 
                 play_again = Label(root, text="Play Again?", style='W.TButton')
 
-                play_again.place(x=700, y=600)
+                yes_button = Button(root, text="Yes", style='W.TButton', command=lambda: self.reset_board())
 
+                #no_button = Button(root, text="No", style='W.TButton', command=lambda self: self.again = False )
+
+                play_again.place(x=700, y=600)
+                yes_button.place(x=670, y=620)
 
 
                 root.update()
