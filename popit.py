@@ -110,10 +110,11 @@ class PopIt:
 
                 yes_button = Button(root, text="Yes", style='W.TButton', command=lambda: self.reset_board())
 
-                #no_button = Button(root, text="No", style='W.TButton', command=lambda self: self.again = False )
+                no_button = Button(root, text="No", style='W.TButton', command=lambda self: self.again = False )
 
                 play_again.place(x=700, y=600)
                 yes_button.place(x=670, y=620)
+                no_button.place(x=690, y=620)
 
 
                 root.update()
