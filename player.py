@@ -11,7 +11,10 @@ class Player:
         return self.score
 
     def set_score(self, s):
-        self.score = s
+        self.score = s'
+        
+    def to_string(self):
+        return self.get_score() 
 
 
 
