@@ -65,6 +65,9 @@ class PopIt:
 
     def reset_board(self):
         return
+    
+    def if_clicked_no(self):
+        self.again = False
 
     def run_game(self):
 
@@ -115,8 +118,10 @@ class PopIt:
                 play_again.place(x=700, y=600)
                 yes_button.place(x=670, y=620)
                 no_button.place(x=690, y=620)
-
-
+                
+                if(!self.again):
+                    return
+                    
                 root.update()
                 time.sleep(5)
                 return
