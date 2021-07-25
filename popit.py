@@ -119,15 +119,15 @@ class PopIt:
                 yes_button.place(x=670, y=620)
                 no_button.place(x=690, y=620)
                 
-                if(!self.again):
-                    return
+                if(self.again!=True):
+                    break
                     
                 root.update()
-                time.sleep(5)
-                return
+
 
             else:
                 root.update()
+        print("Game Over, Exiting. ")
 
 
 pop = PopIt()
