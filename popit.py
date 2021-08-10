@@ -75,7 +75,7 @@ class PopIt:
         root.get_themes()
         root.set_theme('adapta')
         style = Style()
-        style.configure('W.TButton', font=('calibri', 10, 'bold', 'underline'),foreground='red')
+        style.configure('W.TButton', font=('calibri', 10, 'bold', 'underline'),foreground='green')
         player1 = Player()
         player2 = Player()
 
